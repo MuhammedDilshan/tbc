@@ -1,0 +1,15 @@
+.itemNames {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.itemNames ul {
+    display: flex;
+    gap: 20px;
+}
+
+@media (max-width:560px) {
+    .itemNames {
+        width: 92%;
+    }
+}

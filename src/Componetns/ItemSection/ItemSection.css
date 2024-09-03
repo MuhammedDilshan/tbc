@@ -1,0 +1,40 @@
+.itemSection {
+    width: 70%;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.item_list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item_list .item {
+    width: 25%;
+}
+
+.item_list .item .img_container {
+    width: 100%;
+}
+
+.item_list .item .img_container img {
+    display: block;
+    width: 100%;
+}
+
+@media (max-width:730px) {
+    .itemSection {
+        width: 90%;
+    }
+
+}
+
+@media (max-width:560px) {
+    .item_list .item {
+        width: 46%;
+    }
+
+    .item_list {
+        justify-content: center;
+    }
+}
