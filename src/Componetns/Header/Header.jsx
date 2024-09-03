@@ -2,6 +2,7 @@ import React from "react";
 import "./Header.css";
 import { IoMdSearch } from "react-icons/io";
 import { HiMenuAlt2 } from "react-icons/hi";
+import { assets } from "../../Assets/assets";
 
 const Header = () => {
   return (
@@ -12,10 +13,7 @@ const Header = () => {
         </div>
         <div className="bottomHeader">
           <h1>
-            <img
-              src="https://deadthreads.shop/cdn/shop/files/DEAD_THREADS_v1.png?v=1695046784&width=400"
-              alt=""
-            />
+            <img src={assets.Logo} alt="" />
           </h1>
           <form action="">
             <input type="text" placeholder="Find your City" />
