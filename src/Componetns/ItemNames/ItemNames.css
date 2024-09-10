@@ -8,6 +8,16 @@
     gap: 20px;
 }
 
+.itemNames ul li {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.link {
+    color: #000;
+    text-decoration: none;
+}
+
 @media (max-width:560px) {
     .itemNames {
         width: 92%;

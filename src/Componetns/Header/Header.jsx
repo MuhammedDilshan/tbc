@@ -3,6 +3,7 @@ import "./Header.css";
 import { IoMdSearch } from "react-icons/io";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { assets } from "../../Assets/assets";
+import { MdOutlineShoppingBag } from "react-icons/md";
 
 const Header = () => {
   return (
@@ -15,12 +16,15 @@ const Header = () => {
           <h1>
             <img src={assets.Logo} alt="" />
           </h1>
-          <form action="">
-            <input type="text" placeholder="Find your City" />
-            <button>
-              <IoMdSearch />
-            </button>
-          </form>
+          <div className="right_section">
+            <form action="">
+              <input type="text" placeholder="Find your City" />
+              <button>
+                <IoMdSearch />
+              </button>
+            </form>
+            <MdOutlineShoppingBag />
+          </div>
           <div className="menu">
             <HiMenuAlt2 />
           </div>

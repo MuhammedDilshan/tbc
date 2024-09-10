@@ -45,6 +45,16 @@ header .topHeader {
     font-size: 18px;
 }
 
+.right_section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.right_section svg {
+    font-size: 24px;
+}
+
 .menu {
     display: none;
 }
@@ -65,11 +75,15 @@ header .topHeader {
         font-size: 28px;
     }
 
-    .bottomHeader form {
+    .bottomHeader .right_section {
         display: none;
     }
 
     .bottomHeader h1 {
         width: 120px;
+    }
+
+    .bottomHeader {
+        flex-direction: row-reverse;
     }
 }
