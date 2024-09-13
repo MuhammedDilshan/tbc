@@ -11,7 +11,8 @@ const DetailProduct = () => {
         />
       </div>
       <div className="product_details_full">
-        <h6>DETROIT FOOTBALL</h6>
+        <h6>DETROIT </h6>
+        <h6>FOOTBALL</h6>
         <p> Sale priceRs. 3,000.00</p>
         <form action="">
           <label htmlFor="">Color</label>
@@ -25,9 +26,9 @@ const DetailProduct = () => {
         </form>
         <label htmlFor="">Quantity</label>
         <div className="quantity">
-          <p>+</p>
-          <p>1</p>
-          <p>-</p>
+          <p className="count">-</p>
+          <p className="count">1</p>
+          <p className="count">+</p>
         </div>
         <button className="cart">Add to cart</button>
       </div>
