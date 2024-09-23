@@ -96,3 +96,17 @@ label {
         width: 80%;
     }
 }
+
+@media (max-width:450px) {
+    .product_details_full {
+        width: 85%;
+    }
+
+    .product_details_full form select {
+        width: 100%;
+    }
+
+    .cart {
+        width: 100%;
+    }
+}

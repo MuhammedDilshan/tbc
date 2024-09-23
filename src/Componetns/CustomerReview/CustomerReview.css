@@ -29,6 +29,7 @@
     align-items: center;
     margin-bottom: 8px;
 }
+
 .middle span {
     font-size: 16px;
     font-weight: 500;
@@ -49,4 +50,10 @@
     text-align: left;
     font-size: 16px;
     font-weight: 500;
+}
+
+@media (max-width:450px) {
+    .customer_review {
+        width: 90%;
+    }
 }
