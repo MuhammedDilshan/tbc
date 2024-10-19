@@ -59,6 +59,51 @@ header .topHeader {
     display: none;
 }
 
+.mobmenu {
+    width: 100%;
+}
+
+.mobmenu {
+    position: fixed;
+    top: 100px;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.806);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(100%);
+    /* Initially hidden */
+    z-index: 1000;
+}
+
+.mobmenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.mobmenu ul li {
+    margin: 20px 0;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.mobmenu ul li:hover {
+    color: #ccc;
+}
+
+/* When the menu is active, show it */
+.mobmenu.active {
+    transform: translateX(0);
+}
+
+
 @media (max-width:560px) {
     .bottomHeader {
         width: 90%;

@@ -6,11 +6,12 @@ const ItemNames = () => {
   return (
     <div className="itemNames">
       <ul>
-        <li>Home</li>
+        <Link to="/" className="link">
+          <li>Home</li>
+        </Link>
         <Link to="/product" className="link">
           <li>Collections</li>
         </Link>
-        <li>Brand Ambassador</li>
       </ul>
     </div>
   );

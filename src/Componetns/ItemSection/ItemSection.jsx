@@ -1,96 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ItemSection.css";
+import { data } from "../../Data/data";
+import { Link } from "react-router-dom";
 
 const ItemSection = () => {
+  const pathname = window.location.pathname;
+
+  const [allData, setAllData] = useState([]);
+  useEffect(() => {
+    if (pathname === "/") {
+      setAllData(data?.slice(0, 4));
+    } else {
+      setAllData(data);
+    }
+  }, []);
+
   return (
     <div className="itemSection">
       <div className="item_list">
-        <div className="item">
-          <div className="img_container">
-            <img
-              src="https://deadthreads.shop/cdn/shop/files/DETROIT-LIONS_4bc370fd-6419-45b2-b5cd-2c9a6eaa8468.jpg?v=1718815400&width=360"
-              alt=""
-            />
-          </div>
-          <div className="detail_container">
-            <h6>DETROIT FOOTBALL</h6>
-            <span>FRom rs 3000</span>
-          </div>
-        </div>
-        <div className="item">
-          <div className="img_container">
-            <img
-              src="https://deadthreads.shop/cdn/shop/files/DETROIT-LIONS_4bc370fd-6419-45b2-b5cd-2c9a6eaa8468.jpg?v=1718815400&width=360"
-              alt=""
-            />
-          </div>
-          <div className="detail_container">
-            <h6>DETROIT FOOTBALL</h6>
-            <span>FRom rs 3000</span>
-          </div>
-        </div>
-
-        <div className="item">
-          <div className="img_container">
-            <img
-              src="https://deadthreads.shop/cdn/shop/files/DETROIT-LIONS_4bc370fd-6419-45b2-b5cd-2c9a6eaa8468.jpg?v=1718815400&width=360"
-              alt=""
-            />
-          </div>
-          <div className="detail_container">
-            <h6>DETROIT FOOTBALL</h6>
-            <span>FROM RS 300</span>
-          </div>
-        </div>
-        <div className="item">
-          <div className="img_container">
-            <img
-              src="https://deadthreads.shop/cdn/shop/files/DETROIT-LIONS_4bc370fd-6419-45b2-b5cd-2c9a6eaa8468.jpg?v=1718815400&width=360"
-              alt=""
-            />
-          </div>
-          <div className="detail_container">
-            <h6>DETROIT FOOTBALL</h6>
-            <span>FRom rs 3000</span>
-          </div>
-        </div>
-        <div className="item">
-          <div className="img_container">
-            <img
-              src="https://deadthreads.shop/cdn/shop/files/DETROIT-LIONS_4bc370fd-6419-45b2-b5cd-2c9a6eaa8468.jpg?v=1718815400&width=360"
-              alt=""
-            />
-          </div>
-          <div className="detail_container">
-            <h6>DETROIT FOOTBALL</h6>
-            <span>FRom rs 3000</span>
-          </div>
-        </div>
-
-        <div className="item">
-          <div className="img_container">
-            <img
-              src="https://deadthreads.shop/cdn/shop/files/DETROIT-LIONS_4bc370fd-6419-45b2-b5cd-2c9a6eaa8468.jpg?v=1718815400&width=360"
-              alt=""
-            />
-          </div>
-          <div className="detail_container">
-            <h6>DETROIT FOOTBALL</h6>
-            <span>FRom rs 3000</span>
-          </div>
-        </div>
-        <div className="item">
-          <div className="img_container">
-            <img
-              src="https://deadthreads.shop/cdn/shop/files/DETROIT-LIONS_4bc370fd-6419-45b2-b5cd-2c9a6eaa8468.jpg?v=1718815400&width=360"
-              alt=""
-            />
-          </div>
-          <div className="detail_container">
-            <h6>DETROIT FOOTBALL</h6>
-            <span>FRom rs 3000</span>
-          </div>
-        </div>
+        {allData.map((item, index) => {
+          return (
+            <Link
+              className="item"
+              key={index}
+              to={{
+                pathname: `/single/${item.id}`,
+              }}
+            >
+              <div className="img_container">
+                <img src={item.image} alt={item.image_name} />
+              </div>
+              <div className="detail_container">
+                <h6>{item.image_name}</h6>
+                <span>{item.rupees}</span>
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

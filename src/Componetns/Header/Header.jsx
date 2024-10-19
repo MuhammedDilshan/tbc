@@ -8,6 +8,8 @@ import { MdOutlineShoppingBag } from "react-icons/md";
 const Header = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
 
+  const [menu, setMenu] = useState(false);
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 480);
@@ -18,6 +20,22 @@ const Header = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    if (menu) {
+      document.body.style.overflow = "hidden"; // Disable scroll
+    } else {
+      document.body.style.overflow = "auto"; // Enable scroll
+    }
+
+    return () => {
+      document.body.style.overflow = "auto"; // Clean up when component unmounts
+    };
+  }, [menu]);
+
+  const onHandleClick = () => {
+    setMenu(!menu);
+  };
   return (
     <div>
       <header>
@@ -39,10 +57,19 @@ const Header = () => {
             </form>
             <MdOutlineShoppingBag />
           </div>
-          <div className="menu">
+          <div className="menu" onClick={onHandleClick}>
             <HiMenuAlt2 />
           </div>
         </div>
+
+        {menu && (
+          <div className={`mobmenu ${menu ? "active" : ""}`}>
+            <ul>
+              <li>home</li>
+              <li>contact</li>
+            </ul>
+          </div>
+        )}
       </header>
     </div>
   );
