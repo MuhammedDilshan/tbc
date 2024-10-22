@@ -4,6 +4,7 @@ import { IoMdSearch } from "react-icons/io";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { assets } from "../../Assets/assets";
 import { MdOutlineShoppingBag } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
@@ -55,7 +56,9 @@ const Header = () => {
                 <IoMdSearch />
               </button>
             </form>
-            <MdOutlineShoppingBag />
+            <Link className="link" to="/cart">
+              <MdOutlineShoppingBag />
+            </Link>
           </div>
           <div className="menu" onClick={onHandleClick}>
             <HiMenuAlt2 />

@@ -1,5 +1,6 @@
 import React from "react";
 import "./DetailProduct.css";
+import { Link } from "react-router-dom";
 
 const DetailProduct = ({ item }) => {
   return (
@@ -14,10 +15,14 @@ const DetailProduct = ({ item }) => {
           <label htmlFor="">Color</label>
           <select name="" id="">
             <option value="">white</option>
+            <option value="">black</option>
           </select>
           <label htmlFor="">Size</label>
           <select name="" id="">
-            <option value="">s</option>
+            <option value="">S</option>
+            <option value="">M</option>
+            <option value="">L</option>
+            <option value="">XL</option>
           </select>
         </form>
         <label htmlFor="">Quantity</label>
@@ -26,7 +31,9 @@ const DetailProduct = ({ item }) => {
           <p className="count">1</p>
           <p className="count">+</p>
         </div>
-        <button className="cart">Add to cart</button>
+        <Link>
+          <button className="cart">Add to cart</button>
+        </Link>
       </div>
     </div>
   );
